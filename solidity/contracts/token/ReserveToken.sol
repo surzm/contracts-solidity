@@ -15,7 +15,7 @@ library ReserveToken {
     using SafeERC20Ex for IERC20;
 
     // the address that represents an ETH reserve
-    IReserveToken public constant NATIVE_TOKEN_ADDRESS = IReserveToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE);
+//    IReserveToken public constant NATIVE_TOKEN_ADDRESS = IReserveToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE);
 
     /**
      * @dev returns whether the provided token represents an ERC20 or ETH reserve
