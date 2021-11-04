@@ -36,7 +36,7 @@ contract StandardPoolConverter is ConverterVersion, IConverter, ContractRegistry
     uint256 private __reserveBalances;
     uint256 private _reserveBalancesProduct;
     IReserveToken[] private __reserveTokens;
-    mapping(IReserveToken => uint256) private __reserveIds;
+//    mapping(IReserveToken => uint256) private __reserveIds;
 
     IConverterAnchor public override anchor; // converter anchor contract
     uint32 public override maxConversionFee; // maximum conversion fee, represented in ppm, 0...1000000
