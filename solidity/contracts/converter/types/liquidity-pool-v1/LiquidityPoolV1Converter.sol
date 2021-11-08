@@ -268,7 +268,7 @@ contract LiquidityPoolV1Converter is LiquidityPoolConverter, Time {
 
         // if the input value of ETH is larger than zero, then verify that one of the reserves is ETH
         if (msg.value > 0) {
-            require(reserves[ReserveToken.NATIVE_TOKEN_ADDRESS].isSet, "ERR_NO_ETH_RESERVE");
+            require(reserves[IReserveToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)].isSet, "ERR_NO_ETH_RESERVE");
         }
 
         // get the total supply
@@ -328,7 +328,7 @@ contract LiquidityPoolV1Converter is LiquidityPoolConverter, Time {
     function fund(uint256 _amount) public payable protected returns (uint256) {
         syncReserveBalances();
 
-        reserves[ReserveToken.NATIVE_TOKEN_ADDRESS].balance = reserves[ReserveToken.NATIVE_TOKEN_ADDRESS].balance.sub(
+        reserves[IReserveToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)].balance = reserves[IReserveToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)].balance.sub(
             msg.value
         );
 
@@ -594,7 +594,7 @@ contract LiquidityPoolV1Converter is LiquidityPoolConverter, Time {
     ) private returns (uint256) {
         syncReserveBalances();
 
-        reserves[ReserveToken.NATIVE_TOKEN_ADDRESS].balance = reserves[ReserveToken.NATIVE_TOKEN_ADDRESS].balance.sub(
+        reserves[IReserveToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)].balance = reserves[IReserveToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)].balance.sub(
             msg.value
         );
 

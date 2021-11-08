@@ -147,7 +147,7 @@ abstract contract ConverterBase is ConverterVersion, IConverter, ContractRegistr
      * @dev deposits ether
      * can only be called if the converter has an ETH reserve
      */
-    receive() external payable override(IConverter) validReserve(ReserveToken.NATIVE_TOKEN_ADDRESS) {}
+    receive() external payable override(IConverter) validReserve(IReserveToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)) {}
 
     /**
      * @dev checks whether or not the converter version is 28 or higher

@@ -167,7 +167,7 @@ contract StandardPoolConverter is ConverterVersion, IConverter, ContractRegistry
      * @dev deposits ether
      * can only be called if the converter has an ETH reserve
      */
-    receive() external payable override(IConverter) validReserve(ReserveToken.NATIVE_TOKEN_ADDRESS) {}
+    receive() external payable override(IConverter) validReserve(IReserveToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)) {}
 
     /**
      * @dev checks whether or not the converter version is 28 or higher
@@ -777,7 +777,7 @@ contract StandardPoolConverter is ConverterVersion, IConverter, ContractRegistry
 
         // if the input value of ETH is larger than zero, then verify that one of the reserves is ETH
         if (msg.value > 0) {
-            require(__reserveIds[ReserveToken.NATIVE_TOKEN_ADDRESS] != 0, "ERR_NO_ETH_RESERVE");
+            require(__reserveIds[IReserveToken(0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE)] != 0, "ERR_NO_ETH_RESERVE");
         }
 
         // save a local copy of the pool token
